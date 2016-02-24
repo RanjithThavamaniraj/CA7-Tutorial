@@ -1,0 +1,24 @@
+SI NO	COMMAND	DESCRIPTION
+1	LQ	Lists jobs in all the queues
+2	LRDY	Displays job in Ready queue
+3	LREQ	Displays job in Request queue
+4	LACT	Displays job in Active Queue
+5	LIST	Displays jobs that are in 
+6	FSTRUC,JOB=JOBNAME,SCHID=<ID>	Forward structure of the job
+7	FRJOB,JOB=JOBNAME,SCHID=<ID>	Reverse structure of the job
+8	LQ,ST=SKEL/LATE,LIST-RQMT	List job in all queues with the following status and also lists the requirement
+9	LJOB,JOB=<JOBNAME>,LIST=ALL/DEPJ/TRIG/NODD	All the details of the job.
+10	LJCL,JOB=<JOBNAME>	Shows the JCL of the job.
+11	ADDRQ,JOB=JOBNAME,USR=TEXT,DEPJOB=ABC
+	Or 
+	JOBCONN panel / Db.3 panel can be used	Add a user requirement or job dependency.
+12	Cancel ,job=id /name, force = yes	Cancel a job from the CA-7
+13	/Display,ST=JCL	Displays the JCL Libraries.
+14	Demandh,job=<name>,schid=<id>,set=NTR	Demand a job with hold with a particular schid. Use SET=NTR if no triggers are required. If triggers are necessary then don’t use SET=NTR
+15	XQM	List the job with RQMTS (USR,HOLD,JCLOVRD,SUBTM,CANCEL,
+		UPDATE SUBMIT TIME, POST RQMT)
+16	XQJ	CPU JOB STATUS (ALPHABETICAL ORDER)
+17	XQN	CPU JOBS STATUS (CA-7 JOB NO)
+19	LPRRN,JOB=JOBNAME	LISTS THE LAST SUCCESSFUL RUN OF THE JOB.
+20	LRLOG,JOB=JOBNAME,SPAN=<VALUE IN HOURS>	LISTS THE PREVIOUS RUNS OF THE JOB DURING THE SPAN MENTIONED
+21	LRLOG,,JOB=JOBNAME,DATE=*	LISTS THE RUNS of the JOB for last 5 DAYS
