@@ -1,0 +1,49 @@
+CA7  COMMAND
+	
+
+DEFINITION
+LJOB,JOB=xxxxxxxx,LIST=ALL 	Lists date of most recent run, number of runs, whether or not the job is executable, average clock time of last 5 runs, what kind (if any) of condition code checking is being performed, Requirements and Triggered/Scheduled details
+LQ,JOB=xx* 	Displays all jobs starting with xx* currently in the queue.
+FJOB,JOB=*,FROM=(mmddyy,hhmm),
+
+TO=(mmddyy,hhmm),TRIG=JD
+
+-or-
+
+FJOB,JOB=xx*,FROM=mmddyy,SPAN=hh,
+
+SEQ=JOB,TRIG=JD
+	Forecasts what will run on a future date.
+FQJOB,JOB=*,SPAN=hh,TRIG=JD
+
+-or-
+
+FQJOB,JOB=*,SPAN=hh,TRIG=JD,
+
+JOBNET=xxxx
+	Forecasts what will run, starting with what is currently in the queue, and continuing for a specified amount of time.
+FRJOB,JOB=xxxxxxxx,LIST=HDRS 	Finds “header” job.
+FSTRUC,JOB=xxxxxxxx,SCHID=### 	Displays trigger flow for scheduled jobs.
+LACT  -or-  LACTR 	Displays jobs that are currently active.
+LDTM 	Displays jobs whose pre-reqs might require manual posting
+LIST 	Displays jobs that are currently down.
+  	 
+LJOB,JOB=xxxxxxxx,LIST=DEPJ 	Displays job successors (i.e., what this job is a pre-requisite to).
+                                      ,LIST=NODD 	Lists date of most recent run, number of runs, whether or not the job is executable, average clock time of last 5 runs, what kind (if any) of condition code checking is being performed, and queue entry method (if any) and displays job predecessors, successors, and manual USR requirements.
+                                      ,LIST=RQJOB 	Displays job predecessors (this job’s pre-requisites).
+                                      ,LIST=RQUSR 	Displays manual USR requirements.
+LPRRN,JOB=xxxxxxxx,LIST=ALL 	Lists date of most recent run on CA7.
+  	 
+LQ,SEQ=JOB 	Displays all jobs (in alphabetical order) currently in the queue.
+LRDYP 	Shows the complete status of jobs in the RDY queue
+LRLOG,DATE=*,JOB=xxxxxxxx
+
+-or-
+
+LRLOG,DATE=*yyjjj,JOB=xxxxxxxx
+	Displays last 9 days of activity.
+LSCHD,JOB=xxxxxxxx,LIST=BYSID 	Displays run days by schid for scheduled jobs.
+                                      ,LIST=SCHD 	Lists queue entry method (if any).
+/CLOSE 	Use to log off CA-7. 
+/DISPLAY,ST=JCL 	Displays the JCL libraries defined to CA-7, and their INDEX number.  This corresponds with the JCLID number shown on the LJOB Command.
+About these ads
